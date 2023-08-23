@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {imgepath} from '../assets/1001.png';
 
 
 export function Card({product}) {
