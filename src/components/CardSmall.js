@@ -10,7 +10,7 @@ export function CardSmall({product}) {
     // </div>
  <div className="flex items-center space-x-4 md:space-x-64 max-w-screen-xl border-2 border-slate-200 rounded-lg p-3 m-1">
     <div className="flex-shrink-0">
-       <img className="w-32" src={require(`../assets/${product.ImagePath}`)} alt="Neil image"/>
+       <img className="w-32" src={require(`../assets/${product.ImagePath}`)} alt=""/>
     </div>
     <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
         {product.Name}
