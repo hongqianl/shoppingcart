@@ -1,5 +1,3 @@
-import { ProductList } from "../pages";
-import { CartService } from "../services/CartService";
 import { ProductService } from "../services/ProductService";
 
 export const CartReducer = (state, action)=> {
