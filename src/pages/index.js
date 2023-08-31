@@ -1,5 +1,5 @@
-import { Cart } from "./Cart";
-import { ProductList } from "./ProductList";
-import { PageNotFound } from "./PageNotFound";
+export { Cart } from "./Cart";
+export { ProductList } from "./ProductList";
+export { PageNotFound } from "./PageNotFound";
 
-export {Cart, ProductList, PageNotFound}
+//export {Cart, ProductList, PageNotFound}

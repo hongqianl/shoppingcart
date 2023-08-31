@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import { Card } from '../components/Card';
 import { ProductService } from '../services/ProductService';
 import { useSetTitle } from '../hooks/useSetTitle';
-
 
 export function ProductList() {
   const {allProducts: products} = ProductService();

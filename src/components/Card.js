@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 
 
 export function Card({product}) {
+    const {productList, addToCart, removeFromCart} = useCart();
+    const [isProductInCart, setIsProductInCart] = useState(false);
+    const handleAction = ()=> {
+        if ( isProductInCart) {
+            removeFromCart(product.Id);
+        }
+        else {
+            addToCart(product.Id);
+        }
+    }
+
+    useEffect(()=>{
+        setIsProductInCart(productList.find(x=>x == product.Id));
+    },
+    [productList]);
 
   return (
 
@@ -16,7 +32,11 @@ export function Card({product}) {
         </Link>
         <div className="flex items-center justify-between">
             <span className="text-xl font-bold text-gray-900 dark:text-white">${product.Price}</span>
-            <Link to="/cart" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</Link>
+            <button onClick={ handleAction} 
+              className={!isProductInCart ? "text-white bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" :
+              "text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"}>
+                {isProductInCart ? 'Remove':'Add to cart'}
+            </button> 
         </div>
     </div>
 </div>

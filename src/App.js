@@ -10,7 +10,7 @@ function App() {
     <div>
     <BrowserRouter>
       <Header/>
-      <AllRoutes/>
+          <AllRoutes/>
       <Footer/>
     </BrowserRouter>
     </div>
