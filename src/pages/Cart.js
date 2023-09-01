@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import { CardSmall } from '../components/CardSmall';
 import { useSetTitle } from '../hooks/useSetTitle'; 
 import { ProductService } from '../services/ProductService';
