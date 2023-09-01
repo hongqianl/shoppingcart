@@ -18,7 +18,7 @@ export function Card({product}) {
     useEffect(()=>{
         setIsProductInCart(productList.find(x=>x === product.Id));
     },
-    [productList]);
+    [productList, product.Id]);
 
   return (
 
