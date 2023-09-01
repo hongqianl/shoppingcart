@@ -13,5 +13,9 @@ export const CartReducer = (state, action)=> {
             }
             state.productList = state.productList.filter(x=>x !== action.product);
             return {...state, productList: state.productList, total: state.total};
+
+        default:
+            console.log(`action error ${action.type}`);
+            return {state};
     }
 }
